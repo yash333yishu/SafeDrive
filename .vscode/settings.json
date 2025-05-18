@@ -1,0 +1,11 @@
+{
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "less"
+  ],
+  "stylelint.ignoreFiles": [
+    "**/*.html"
+  ],
+  
+}
