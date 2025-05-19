@@ -2,10 +2,8 @@ import joblib
 import pandas as pd
 import numpy as np
 
-# Load your trained model
-model = joblib.load('risk_predictor_test.pkl')
+model = joblib.load('risk_predictor_1.pkl')
 
-# Create manual test cases
 manual_inputs = [
     {'temperature': 30, 'visibility': 9000, 'traffic_density': 20, 'vehicle_speed': 30, 'risk_zone': 0},  # Should predict Safe
     {'temperature': 35, 'visibility': 4000, 'traffic_density': 60, 'vehicle_speed': 71, 'risk_zone': 0},  # Should predict Caution
@@ -15,7 +13,6 @@ manual_inputs = [
 # Convert to DataFrame
 manual_df = pd.DataFrame(manual_inputs)
 
-# Predict
 predictions = model.predict(manual_df)
 
 # Map predictions to labels
@@ -27,15 +24,6 @@ for idx, pred in enumerate(predictions):
 
 print(np.unique(predictions, return_counts=True))
 
-'''import requests
-
-lat, lon = 28.193112781030408,76.94340897627585  # Example coords
-api_key = "aed9a7e23f0bb21032ff0304a35175a8"
-
-url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}&units=metric"
-response = requests.get(url).json()
-
-print(response)  # 🔍 '''
 
 
 

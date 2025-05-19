@@ -1,4 +1,4 @@
-import sqlite3
+'''import sqlite3
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -112,4 +112,4 @@ joblib.dump(scaler, 'scaler8.pkl')
 print("📦 Best model and scaler saved!")
 
 print(df['label'].value_counts())
-
+'''

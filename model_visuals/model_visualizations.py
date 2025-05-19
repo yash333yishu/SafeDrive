@@ -45,7 +45,7 @@ for col in X:
     plt.tight_layout()
     plt.show()
 
-# Scatterplot examples
+# Scatterplot 
 plt.figure(figsize=(6, 4))
 sns.scatterplot(data=df, x='vehicle_speed', y='visibility', hue='label', palette='dark')
 plt.title("Speed vs Visibility colored by Risk")
@@ -111,11 +111,10 @@ for name, model in models.items():
         best_model = model
         best_model_name = name
 
-# Save best model
+# Best model
 joblib.dump(best_model, 'risk_predictor_test.pkl')
 print(f"✅ Best Model: {best_model_name} saved as risk_predictor_test.pkl")
 
-# --- PLOTS ---
 
 # 1. Bar chart: Accuracy comparison
 plt.figure(figsize=(8, 5))

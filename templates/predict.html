@@ -262,13 +262,13 @@
         </p>
         <p class="text-xs text-slate-400 mt-1">Session started: {{ current_time }}</p>
 
-        <!-- Optional logout button (placeholder) -->
+        <!-- Logout button -->
         <form method="POST" action="/logout" class="mt-3">
           <button type="submit" class="text-m text-red-600 hover:underline">🔓 Logout</button>
         </form>
       </div>
 
-      <!-- 🚨 SOS Alert Card --> 
+      <!-- 🚨 SOS Alert --> 
         <button onclick="alert('🚨 SOS Sent! Nearby authorities alerted.')" class="mt-4 w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg font-semibold shadow">
           🚨 Send SOS
         </button>
@@ -277,7 +277,7 @@
     </div>
   </div>
 
-  <!-- Scripts (Map, Location) -->
+  <!-- Scripts -->
   {% if lat and lon %}
   <script>
     function initMap() {
