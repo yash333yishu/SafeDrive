@@ -331,7 +331,7 @@
     }
 
     const script = document.createElement("script");
-    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAzxIgNOQyJzvPJ86xFsLzYobdC-zsyrR8&callback=initMap";
+    script.src = "https://maps.googleapis.com/maps/api/js?key={{ google_api_key }}&callback=initMap";
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);
@@ -347,7 +347,7 @@
           document.getElementById("lat").value = lat;
           document.getElementById("lon").value = lon;
 
-          fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=AIzaSyAzxIgNOQyJzvPJ86xFsLzYobdC-zsyrR8`)
+          fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key={{ google_api_key }}`)
             .then(res => res.json())
             .then(data => {
               if (data.status === "OK") {
@@ -363,7 +363,7 @@
     }
 
   </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzxIgNOQyJzvPJ86xFsLzYobdC-zsyrR8&libraries=places"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key }}&libraries=places"></script>
   <script>
     function initAutocomplete() {
       const input = document.getElementById('autocomplete'); // your input element's id

@@ -8,6 +8,8 @@ import random
 from datetime import datetime,timedelta
 from flask import Flask, render_template, request
 from werkzeug.security import generate_password_hash, check_password_hash
+from dotenv import load_dotenv
+import os
 
 
 
@@ -18,8 +20,11 @@ model = joblib.load('risk_predictor_1.pkl')
 app.secret_key = 'your-secret-key'  # Needed for session
 app.permanent_session_lifetime = timedelta(days=1)
 
-GOOGLE_API_KEY = 'AIzaSyAzxIgNOQyJzvPJ86xFsLzYobdC-zsyrR8'
-WEATHER_API_KEY = 'aed9a7e23f0bb21032ff0304a35175a8'
+load_dotenv()
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
+
+
 
 # Geocode address if lat/lon is not given
 def geocode_address(address):
@@ -299,7 +304,7 @@ def predict_page():
     return render_template("predict.html",prediction=prediction,
                             recommendation=recommendation,lat=lat,lon=lon,level=level,
                             address=address_name,timestamps=timestamps,temperatures=temperatures,weather=weather,
-                            visibility=visibility_vals,visibility_label=visibility_label,current_time=current_time)
+                            visibility=visibility_vals,visibility_label=visibility_label,current_time=current_time,google_api_key=GOOGLE_API_KEY)
 
 
 if __name__ == "__main__":
