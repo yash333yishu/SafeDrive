@@ -60,9 +60,9 @@ for name, model in models.items():
 
 
 # Step 6: Save the best model
-joblib.dump(best_model, 'risk_predictor3.pkl')
+joblib.dump(best_model, 'risk_predictor1.pkl')
 print(f"\n🏆 Best model: {best_model_name} with Accuracy: {best_accuracy:.4f}")
-print("✅ Model saved as 'risk_predictor3.pkl'.")
+print("✅ Model saved as 'risk_predictor1.pkl'.")
 
 # Step 7: Plot Confusion Matrix
 y_best_pred = best_model.predict(X_test)
